@@ -1,17 +1,13 @@
-import React from 'react'
-
-import { useContext } from 'react'
-
-import { Context } from './Home'
-
+import React, { useContext } from "react";
+import { Context } from "./Home";
 const GrandChild = () => {
-  const data = useContext(Context)
-  console.log(data);
+  const data = useContext(Context);
   return (
     <div>
-        <h3 className='text-2xl'>GrandChild: {data}</h3>
+      <h3 className="text-2xl">GrandChild</h3>
+      <p>{data}</p>
     </div>
-  )
-}
+  );
+};
 
-export default GrandChild
+export default GrandChild;

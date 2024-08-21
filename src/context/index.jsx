@@ -1,9 +1,13 @@
-import { useContext, createContext, useReducer  } from "react";
+import { createContext, useContext, useReducer } from "react";
 
-const Context = createContext()
+const Context = createContext();
 
-export const ContextProvider = ({initialState, reducer, children}) => {
-    return <Context.Provider value={useReducer(reducer,initialState)}>{children} </Context.Provider>
-}
+export const ContextProvider = ({ initialState, reducer, children }) => {
+  const [state, dispatch] = useReducer(reducer, initialState);
 
-export const useStateValue = () => useContext(Context)
+  return (
+    <Context.Provider value={[state, dispatch]}>{children}</Context.Provider>
+  );
+};
+
+export const useStateValue = () => useContext(Context);

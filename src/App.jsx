@@ -1,22 +1,24 @@
-import Home from "./pages/home/Home"
-import { Routes, Route } from "react-router-dom"
-import Header from "@/components/header/Header"
-import Footer from "@/components/footer/Footer"
-import Wishlist from "@/pages/wishlist/Wishlist"
-import Login from "@/pages/login/Login"
+import Home from "./pages/home/Home";
+import { Routes, Route } from "react-router-dom";
+import Wishlist from "@/pages/wishlist/Wishlist";
+import Login from "@/pages/login/Login";
+
+import Layout from "./components/layout/Layout";
+import Cart from "./pages/cart/Cart";
 
 function App() {
   return (
-    <>  
-      <Header/>
+    <>
       <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/wishlist" element={<Wishlist/>}/>
-        <Route path="/login" element={<Login/>}/>
+        <Route path="/" element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/wishlist" element={<Wishlist />} />
+          <Route path="/cart" element={<Cart />} />
+        </Route>
+        <Route path="/login" element={<Login />} />
       </Routes>
-      <Footer/>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

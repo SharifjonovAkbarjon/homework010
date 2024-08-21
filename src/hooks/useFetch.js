@@ -17,4 +17,3 @@ export const useFetch = (path, params, deps=[]) => {
 
     return {data, loading, error}
 } 
-
