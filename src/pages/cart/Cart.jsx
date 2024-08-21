@@ -37,10 +37,10 @@ const Cart = () => {
               key={item.id}
               className="flex items-center justify-between p-3 border-b"
             >
-              <img
+              <img 
                 src={item.images[0]}
                 alt={item.title}
-                className="w-16 h-16 object-cover mr-4"
+                className="w-10 h-16 object-contain  mr-4"
               />
               <div className="flex-1">
                 <h3 className="text-xl font-semibold">{item.title}</h3>
